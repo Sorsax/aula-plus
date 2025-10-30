@@ -13,7 +13,7 @@ export const SearchBar = () => {
 
   return (
     <div className="w-[55vw] max-w-4xl">
-      <GlassPanel className="rounded-full" style={{ height: "5.5vh", minHeight: "48px" }}>
+  <GlassPanel className="rounded-full" cornerRadius={999} style={{ height: "5.5vh", minHeight: "48px" }}>
         <form onSubmit={handleSearch} className="flex items-center gap-3 px-6 h-full">
           <div className="flex items-center gap-3 flex-1">
             {/* Google mark */}
