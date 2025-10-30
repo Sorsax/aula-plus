@@ -1,0 +1,124 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Helsinki Grotesk Font */
+@font-face {
+  font-family: 'Helsinki Grotesk';
+  src: url('/fonts/HelsinkiGrotesk-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helsinki Grotesk';
+  src: url('/fonts/HelsinkiGrotesk-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helsinki Grotesk';
+  src: url('/fonts/HelsinkiGrotesk-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Design System - Liquid Glass Theme */
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 100%;
+
+    /* Glassmorphism colors */
+    --glass-primary: 0 0% 100%;
+    --glass-secondary: 0 0% 95%;
+    --glass-border: 0 0% 100%;
+    
+    /* Text colors */
+    --text-glass: 0 0% 100%;
+    --text-glass-muted: 0 0% 85%;
+    
+    /* Shadows */
+    --shadow-glass: 0 0% 0%;
+    
+    --primary: 210 100% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 95%;
+    --secondary-foreground: 0 0% 10%;
+
+    --muted: 0 0% 95%;
+    --muted-foreground: 0 0% 45%;
+
+    --accent: 210 100% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 210 100% 50%;
+
+    --radius: 1rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Helsinki Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+}
+
+/* Glassmorphism Utilities */
+@layer utilities {
+  .glass-panel {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.25);
+  }
+  
+  .glass-hover {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .glass-hover:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px 0 rgba(0, 0, 0, 0.3);
+  }
+  
+  .text-glass {
+    color: rgba(255, 255, 255, 0.95);
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    font-weight: 500;
+    letter-spacing: 0.01em;
+  }
+  
+  .text-glass-muted {
+    color: rgba(255, 255, 255, 0.75);
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+    font-weight: 400;
+    letter-spacing: 0.01em;
+  }
+}
